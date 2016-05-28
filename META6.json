@@ -4,7 +4,7 @@
   ],
   "build-depends" : [],
   "depends" : [],
-  "description" : "Find cycles in a connected graph using Tarjan's strongly connected component algorithm",
+  "description" : "Find cycles in a directed graph using Tarjan's strongly connected component algorithm",
   "name" : "Algorithm::Tarjan",
   "perl" : "6.c",
   "provides" : {

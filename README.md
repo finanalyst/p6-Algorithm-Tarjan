@@ -2,7 +2,9 @@
 
 A perl6 implementation of Tarjan's algorithm for finding strongly connected components in a directed graph. 
 
-More information can be found at wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm
+More information can be found at wikipedia.org/wiki/Tarjan's_strongly_connected_components_algorithm.
+
+If there is a cycle, then it will be within a strongly connected component. This implies that the absence of strongly connected components (other than a node with itself) means there are no cycles. It is possible there may be no cycles, but a strongly connected component may still exist (if I have interpreted the theory correctly). I was interested in the absence of cycles.
 
 ```
 use Algorithm::Tarjan;

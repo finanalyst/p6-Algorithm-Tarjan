@@ -1,12 +1,9 @@
-os:
-  - linux
-  - osx
 language: perl6
 perl6:
   - latest
 install:
-  - rakudobrew build-panda
-  - panda --notests installdeps .
+    - rakudobrew build-panda
+    - panda installdeps .
 script:
-  - PERL6LIB=$PWD/lib prove -e perl6 -v t/
+    PERL6LIB=lib prove -v -r --exec=perl6 t/
 sudo: false

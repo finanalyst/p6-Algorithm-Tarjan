@@ -36,8 +36,7 @@ class Algorithm::Tarjan {
                                     );
         };
         # adds children not in node set
-        # the sort on name is a kludge to make some data sets work
-        for %!nodes.values.sort( { .name } ) -> $node {
+        for %!nodes.values -> $node {
             for $node.succ {
               %!nodes{~$_} = Algorithm::Tarjan::Node.new( :name(~$_) ) unless %!nodes{~$_}:exists
             }

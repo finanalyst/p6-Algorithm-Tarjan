@@ -24,7 +24,6 @@ class Algorithm::Tarjan {
     has Bool $!run-once;
 
     method init( %h ) {
-      say "local version";
         %!nodes = Empty;
         $!main-index = 0;
         @!stack = Empty;

@@ -47,7 +47,6 @@ class Algorithm::Tarjan {
     method strong-components {
         return if $!run-once;
         for %!nodes.values -> $node {
-            next unless $node.name;
             $.strong-connect($node) without $node.index
         };
         $!run-once = True;
@@ -66,12 +65,6 @@ class Algorithm::Tarjan {
               $.strong-connect( $wn );
               $v.low-link = min( $v.low-link, $wn.low-link );
             }
-            # if ( ! $wn.index.defined ) {
-            #     $.strong-connect( $wn );
-            #     $v.low-link = min( $v.low-link, $wn.low-link );
-            # } elsif $wn.on-stack {
-            #     $v.low-link = min( $v.low-link, $wn.index );
-            # }
         }
         my Algorithm::Tarjan::Node $w;
         my @scc = ();

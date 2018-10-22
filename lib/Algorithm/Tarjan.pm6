@@ -73,7 +73,7 @@ class Algorithm::Tarjan {
                 $w.on-stack = False;
                 @scc.push: $w.name;
             } until $w.name eq $v.name;
-            @!strongly-connected.push( @scc.sort.join(',') ) if @scc.elems > 1;
+            @!strongly-connected.push( @scc.sort.join(', ') ) if @scc.elems > 1;
         }
     }
 

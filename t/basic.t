@@ -20,7 +20,7 @@ my %h = (
     j => (),
     k => (),
     l => (),
-    m => ()    
+    m => ()
 );
 lives-ok { $a.init( %h ) }, 'test graph, no cycles loads';
 lives-ok { $a.strong-components()}, 'get strong components without dying';
@@ -53,11 +53,11 @@ is $a.find-cycles, 0, 'no cycles in graph';
     j => (),
     k => (),
     l => (),
-    m => ('a', )    
+    m => ('a', )
 );
 $a.init( %h );
 $a.strong-components();
-is-deeply $a.strongly-connected.list, ['a,b,c,g,m'], 'list of strong components in graph';
+is-deeply $a.strongly-connected.list, ['a, b, c, g, m'], 'list of strong components in graph';
 is $a.find-cycles, 1, 'A cycle in graph';
 
 %h = (
@@ -68,11 +68,11 @@ is $a.find-cycles, 1, 'A cycle in graph';
     e => <d f>,
     f => <c g>,
     g => ('f',),
-    h => <e g h>    
+    h => <e g h>
 );
 $a.init( %h );
 $a.strong-components();
-is-deeply $a.strongly-connected.list, ['a,b,c', 'f,g', 'd,e'], 'deals with graph in Wikipedia article';
+is-deeply $a.strongly-connected.list, ['a, b, c', 'f, g', 'd, e'], 'deals with graph in Wikipedia article';
 is $a.find-cycles, 3, 'Three cycles in graph';
 
 %h = (
